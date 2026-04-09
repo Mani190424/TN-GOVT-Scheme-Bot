@@ -1,0 +1,499 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>TNSchemesBot</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300|Open+Sans:300|Oxygen|Material+Icons"
+		rel="stylesheet">
+	<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">-->
+
+	<!-- custom css -->
+	<link rel="stylesheet" type="text/css" href="../static/web/main.css">
+	
+    <!-- Favicon -->
+    <link href="../static/img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="../static/web/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="../static/web/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="../static/web/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+    <link href="../static/web/lib/twentytwenty/twentytwenty.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="../static/web/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="../static/web/css/style.css" rel="stylesheet">
+	
+	
+	 <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+	 
+	 <style type="text/css">
+	 .box {
+	flex-grow: 1;
+	outline-width: 0;
+	padding: 12px;
+	border: 1px solid #bcbdc0;
+	border-radius: 50px;
+	margin-right: 15px;
+}
+	 </style>
+	 <script language="javascript">
+	 /*function validate()
+	 {
+	 	if(document.form1.msg_input.value=="")
+		{
+		alert("Enter Your Queries?");
+		document.form1.msg_input.focus();
+		return false;
+		}
+		return true;
+	 }*/
+	 function getEmoji(id)
+	 {
+	
+	 	if(id=="1")
+		{
+		document.getElementById("x2").style.display="none";
+		document.getElementById("x1").style.display="block";
+		document.getElementById("x3").style.display="block";
+		}
+		else
+		{
+		document.getElementById("x1").style.display="none";
+		document.getElementById("x2").style.display="block";
+		document.getElementById("x3").style.display="none";
+		}
+	 }
+	 function setEmoji(id)
+	 {
+	 var s;
+	 var m="";
+	 var e=document.form1.emj.value;
+	  var ms=document.form1.msg_input.value;
+		 if(e=="")
+		 {
+		 s=id;
+		 m='<img src="../static/img/'+id+'" width="40" height="40">';
+		 }
+		 else
+		 {
+		 s=e+","+id;
+		 var v=s.split(",");
+		 m="";
+		 	for(i=0;i<v.length;i++)
+			{
+			
+			m+=' <img src="../static/img/'+v[i]+'" width="40" height="40">';
+			}
+		 
+		 }
+	 document.form1.emj.value=s;
+	 document.form1.msg_input1.value=ms+" "+m;
+	 document.getElementById("x4").innerHTML=m;
+	 }
+	 function getClear()
+	 {
+	 document.form1.emj.value="";
+	 document.form1.msg_input.value="";
+	 document.form1.msg_input1.value="";
+	 document.getElementById("x4").innerHTML="";
+	 }
+	 </script>
+	 
+	 	<script>
+	function show()
+	{
+	document.getElementById("x1").style.display="block";
+	document.getElementById("x2").style.display="none";
+	}
+	/////////////
+	
+		var result = document.getElementById('result');
+  
+		function startConverting () {
+		
+		document.getElementById("x1").style.display="none";
+	document.getElementById("x2").style.display="block";
+
+		if('webkitSpeechRecognition' in window) {
+			var speechRecognizer = new webkitSpeechRecognition();
+			speechRecognizer.continuous = true;
+			speechRecognizer.interimResults = true;
+			speechRecognizer.lang = 'en-US';
+			speechRecognizer.start();
+
+			var finalTranscripts = '';
+
+			speechRecognizer.onresult = function(event) {
+				var interimTranscripts = '';
+				for(var i = event.resultIndex; i < event.results.length; i++){
+					var transcript = event.results[i][0].transcript;
+					transcript.replace("\n", "<br>");
+					if(event.results[i].isFinal) {
+						finalTranscripts += transcript;
+						document.form1.res.value=finalTranscripts;
+					}else{
+						interimTranscripts += transcript;
+					}
+				}
+				result.innerHTML = finalTranscripts + '<span style="color: #999">' + interimTranscripts + '</span>';
+			};
+			speechRecognizer.onerror = function (event) {
+
+			};
+			
+			getPost();
+			
+		}else {
+			result.innerHTML = 'Your browser is not supported. Please download Google chrome or Update your Google chrome!!';
+		}	
+		}
+	
+	</script>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <!--<div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary m-1" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-grow text-dark m-1" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-grow text-secondary m-1" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>-->
+    <!-- Spinner End -->
+
+
+    <!-- Topbar Start -->
+    <!--<div class="container-fluid bg-light ps-5 pe-0 d-none d-lg-block">
+        <div class="row gx-0">
+            <div class="col-md-6 text-center text-lg-start mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center">
+                    <small class="py-2"><i class="far fa-clock text-primary me-2"></i>Opening Hours: Mon - Tues : 6.00 am - 10.00 pm, Sunday Closed </small>
+                </div>
+            </div>
+            <div class="col-md-6 text-center text-lg-end">
+                <div class="position-relative d-inline-flex align-items-center bg-primary text-white top-shape px-5">
+                    <div class="me-3 pe-3 border-end py-2">
+                        <p class="m-0"><i class="fa fa-envelope-open me-2"></i>healthcare@info.com</p>
+                    </div>
+                    <div class="py-2">
+                        <p class="m-0"><i class="fa fa-phone-alt me-2"></i>+012 345 6789</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>-->
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm px-5 py-3 py-lg-0">
+        <a href="index.html" class="navbar-brand p-0">
+            <h1 class="m-0" style="color:#FF0000">TNSchemesBot</h1>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto py-0">
+                <a href="#" onclick="fetch('http://localhost:5000/logout', {credentials: 'include'}).then(()=>{window.location.href='index.html';}); return false;" class="nav-item nav-link">Logout</a>
+                
+                <!--<a href="service.html" class="nav-item nav-link">Service</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Pages</a>
+                    <div class="dropdown-menu m-0">
+                        <a href="price.html" class="dropdown-item">Pricing Plan</a>
+                        <a href="team.html" class="dropdown-item">Our Dentist</a>
+                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                        <a href="appointment.html" class="dropdown-item active">Appointment</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-item nav-link">Contact</a>-->
+            </div>
+            <!--<button type="button" class="btn text-dark" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i></button>-->
+           <!-- <a href="appoint.html" class="btn btn-primary py-2 px-4 ms-3">Appointment</a>-->
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+
+    <!-- Full Screen Search Start -->
+   <!-- <div class="modal fade" id="searchModal" tabindex="-1">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content" style="background: rgba(9, 30, 62, .7);">
+                <div class="modal-header border-0">
+                    <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body d-flex align-items-center justify-content-center">
+                    <div class="input-group" style="max-width: 600px;">
+                        <input type="text" class="form-control bg-transparent border-primary p-3" placeholder="Type search keyword">
+                        <button class="btn btn-primary px-4"><i class="bi bi-search"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>-->
+    <!-- Full Screen Search End -->
+
+
+    <!-- Hero Start -->
+    
+    <!-- Hero End -->
+
+
+    <!-- Appointment Start container-fluid bg-primary bg-appointment mb-5 wow fadeInUp-->
+    <div class="" data-wow-delay="0.1s" style="margin-top: 90px; background-color:#FFFFFF">
+        <div class="container">
+            <div class="row gx-5">
+               
+                <div class="col-lg-12">
+                    
+					
+					
+					<div class="container">
+
+		<div class="row padded_row">
+
+			<!-- right side content -->
+			<div class="col-md-7">
+
+				<div class="chat_window">
+
+					<div class="top_menu">
+						<div class="title">User: <span class="dynamic-data"></span></div>
+					</div>
+
+					<!-- dynamically rendered  class="app_button_1"-->
+					<ul class="messages"></ul>
+
+					<!-- input -->
+					<div class="bottom_wrapper">
+					<!--<span id="x2" style="display:block"><a href="javascript:getEmoji('1')"><img src="../static/img/e1.jpg" width="40" height="40"></a></span>
+						<span id="x3" style="display:none"><a href="javascript:getEmoji('2')"><img src="../static/img/e1.jpg" width="40" height="40"></a></span>-->
+						<div id="result"></div>
+							
+							<div id="x1">
+						 <a href="javascript:startConverting();"><i class="fa fa-microphone btn btn-danger" aria-hidden="true"></i></a>
+						 	</div>
+							
+							<div id="x2" style="display:none">
+						<a href="javascript:show();"> <img src="../static/mic-animate.gif"></a>
+						</div>
+						
+						<form name="form1" id="myForm" method="post" action="/bot">
+						<select name="language" class="form-control" required>
+						<option value="">-Select Language-</option>
+						<option value="ta">Tamil</option>
+						<option value="hi">Hindi</option>						
+						<option value="ml">Malayalam</option>
+						<option value="kn">Kannada</option>
+						<option value="te">Telugu</option>
+						<option value="mr">Marathi</option>
+						<option value="ur">Urdu</option>
+						<option value="bn">Bengali</option>
+						<option value="gu">Gujarati</option>
+						<option value="fr">French</option>
+						</select>
+						<input name="msg_input" id="res" class="box" placeholder="Say Hi to begin chat..." required />
+						
+						<!--<input type="button" id="send_button" class="btn">Send</button>-->
+						<input type="hidden" name="emj">
+						<span style="display:none"><input type="text" name="msg_input1"></span>
+						<span id="x4">&nbsp;</span>
+						 <button class="app_button_1" type="button" style="background-color:#FF0000; color:#FFFFFF">Send </button>
+						<!-- <button type="button" class="app_button_1" onClick="getClear()">Clear</button>-->
+						</form>
+						
+						
+						<div id="x1" style="display:none">
+						<table border="0">
+						<tr>
+						<td><a href="javascript:setEmoji('e1.jpg')"><img src="../static/img/e1.jpg" width="40" height="40"></a></td>
+						<td><a href="javascript:setEmoji('e2.jpg')"><img src="../static/img/e2.jpg" width="40" height="40"></a></td>
+						<td><a href="javascript:setEmoji('e3.jpg')"><img src="../static/img/e3.jpg" width="40" height="40"></a></td>
+						<td><a href="javascript:setEmoji('e4.jpg')"><img src="../static/img/e4.jpg" width="40" height="40"></a></td>
+						</tr>
+						<tr>
+						<td><a href="javascript:setEmoji('e5.jpg')"><img src="../static/img/e5.jpg" width="40" height="40"></a></td>
+						<td><a href="javascript:setEmoji('e6.jpg')"><img src="../static/img/e6.jpg" width="40" height="40"></a></td>
+						<td><a href="javascript:setEmoji('e7.jpg')"><img src="../static/img/e7.jpg" width="40" height="40"></a></td>
+						<td><a href="javascript:setEmoji('e8.jpg')"><img src="../static/img/e8.jpg" width="40" height="40"></a></td>
+						</tr>
+						<tr>
+						<td><a href="javascript:setEmoji('e9.jpg')"><img src="../static/img/e9.jpg" width="40" height="40"></a></td>
+						<td><a href="javascript:setEmoji('e10.jpg')"><img src="../static/img/e10.jpg" width="40" height="40"></a></td>
+						<td><a href="javascript:setEmoji('e11.jpg')"><img src="../static/img/e11.jpg" width="40" height="40"></a></td>
+						<td><a href="javascript:setEmoji('e12.jpg')"><img src="../static/img/e12.jpg" width="40" height="40"></a></td>
+						</tr>
+						<tr>
+						<td><a href="javascript:setEmoji('e13.jpg')"><img src="../static/img/e13.jpg" width="40" height="40"></a></td>
+						<td><a href="javascript:setEmoji('e14.jpg')"><img src="../static/img/e14.jpg" width="40" height="40"></a></td>
+						<td><a href="javascript:setEmoji('e15.jpg')"><img src="../static/img/e15.jpg" width="40" height="40"></a></td>
+						<td><a href="javascript:setEmoji('e16.jpg')"><img src="../static/img/e16.jpg" width="40" height="40"></a></td>
+						</tr>
+						</table>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+			<!-- left side content -->
+			<div class="col-md-5">
+				<div class="chat_window">
+
+					<div class="top_menu">
+						<div class="title">Help</div>
+					</div>
+
+					<!-- help container -->
+					<div class="panel-group" id="accordion">
+
+						<!-- help - 1 -->
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<!--<h4 class="panel-title">
+									<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+										href="#collapse1">Chat - Query</a>
+								</h4>-->
+							</div>
+							<div id="collapse1" class="panel-collapse collapse in">
+								<div class="panel-body">
+									
+									<span class="dynamic-data"></span><br>
+									
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+					
+					
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Appointment End -->
+    
+
+    <!-- Newsletter Start -->
+   
+    <!-- Newsletter End -->
+    
+
+    <!-- Footer Start -->
+    <!--<div class="container-fluid bg-dark text-light py-5 wow fadeInUp" data-wow-delay="0.3s" style="margin-top: -75px;">
+        <div class="container pt-5">
+            <div class="row g-5 pt-4">
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="text-white mb-4">Quick Links</h3>
+                    <div class="d-flex flex-column justify-content-start">
+                        <a class="text-light mb-2" href="appoint.html"><i class="bi bi-arrow-right text-primary me-2"></i>Appointment</a>
+                       
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="text-white mb-4">Popular Links</h3>
+                    <div class="d-flex flex-column justify-content-start">
+                        <a class="text-light mb-2" href="login_admin.html"><i class="bi bi-arrow-right text-primary me-2"></i>Admin</a>
+                       
+                        
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="text-white mb-4">Get In Touch</h3>
+                    <p class="mb-2"><i class="bi bi-geo-alt text-primary me-2"></i>123 Street, SN Road, Chennai</p>
+                    <p class="mb-2"><i class="bi bi-envelope-open text-primary me-2"></i>healthcare@info.com</p>
+                    <p class="mb-0"><i class="bi bi-telephone text-primary me-2"></i>+012 345 67890</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="text-white mb-4">Follow Us</h3>
+                    <div class="d-flex">
+                        <a class="btn btn-lg btn-primary btn-lg-square rounded me-2" href="#"><i class="fab fa-twitter fw-normal"></i></a>
+                        <a class="btn btn-lg btn-primary btn-lg-square rounded me-2" href="#"><i class="fab fa-facebook-f fw-normal"></i></a>
+                        <a class="btn btn-lg btn-primary btn-lg-square rounded me-2" href="#"><i class="fab fa-linkedin-in fw-normal"></i></a>
+                        <a class="btn btn-lg btn-primary btn-lg-square rounded" href="#"><i class="fab fa-instagram fw-normal"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>: #051225;-->
+    <div class="container-fluid text-light py-4" style="background:#FF0000">
+        <div class="container">
+            <div class="row g-0">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-md-0">&copy; TNSchemesBot<a class="text-white border-bottom" href="#"></a></p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0"> <a class="text-white border-bottom" href="https://htmlcodex.com"></a><br>
+                        <a class="text-white border-bottom" href="https://themewagon.com"></a>              
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+	<!-- vendor script files -->
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js">
+	</script>
+
+	<!-- custom scripts -->
+	<script src="../static/web/main.js"></script>
+	
+	
+	
+	
+	
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/web/lib/wow/wow.min.js"></script>
+    <script src="../static/web/lib/easing/easing.min.js"></script>
+    <script src="../static/web/lib/waypoints/waypoints.min.js"></script>
+    <script src="../static/web/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="../static/web/lib/tempusdominus/js/moment.min.js"></script>
+    <script src="../static/web/lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="../static/web/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script src="../static/web/lib/twentytwenty/jquery.event.move.js"></script>
+    <script src="../static/web/lib/twentytwenty/jquery.twentytwenty.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="../static/web/js/main.js"></script>
+    <script src="static/api.js"></script>
+</body>
+
+</html>

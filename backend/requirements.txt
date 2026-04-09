@@ -1,0 +1,17 @@
+Flask
+mysql-connector-python
+pandas
+numpy
+matplotlib
+Pillow
+SpeechRecognition
+googletrans==4.0.0-rc1
+gTTS
+torch
+transformers
+sentence-transformers
+gensim
+scikit-learn
+wordcloud
+flask-cors
+gunicorn

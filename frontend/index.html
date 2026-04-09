@@ -1,0 +1,331 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>TNSchemesBot</title>
+
+    <link rel="icon" href="../static/img/core-img/favicon.ico">
+    <link rel="stylesheet" href="../static/style.css">
+
+    <!-- Extra Modern CSS -->
+    <style>
+        body {
+            font-family: "Poppins", Arial, sans-serif;
+			background: #ffffff;
+        }
+
+        /* Navbar */
+        .custom-navbar {
+            background: #ffffff;
+            box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.08);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
+        .custom-navbar .nav-brand {
+            font-size: 28px;
+            font-weight: 800;
+            color: #111;
+        }
+
+        .custom-navbar .nav-links a {
+            margin: 0 12px;
+            font-weight: 600;
+            color: #111;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .custom-navbar .nav-links a:hover {
+            color: #ff0000;
+        }
+
+        .nav-btn {
+            background: #ff0000;
+            padding: 10px 18px;
+            border-radius: 10px;
+            color: #fff !important;
+            font-weight: 700;
+        }
+
+        /* Hero */
+        .hero-new {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    padding: 60px 20px;
+    background: #f3f8ff;
+    color: #111;
+}
+
+        .hero-new h1 {
+            font-size: 48px;
+            font-weight: 900;
+            line-height: 1.2;
+        }
+
+        .hero-new p {
+            font-size: 18px;
+            margin-top: 15px;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            margin-top: 25px;
+        }
+
+        .hero-buttons a {
+            display: inline-block;
+            padding: 12px 22px;
+            border-radius: 10px;
+            font-weight: 700;
+            text-decoration: none;
+            margin-right: 10px;
+            transition: 0.3s;
+        }
+
+        .btn-main {
+            background: #ff0000;
+            color: #fff;
+        }
+
+        .btn-main:hover {
+            background: #d90000;
+        }
+
+        .btn-outline {
+            border: 2px solid #fff;
+            color: #fff;
+        }
+
+        .btn-outline:hover {
+            background: #fff;
+            color: #000;
+        }
+.btn-outline {
+    border: 2px solid #ff0000;
+    color: #ff0000;
+}
+.btn-outline:hover {
+    background: #ff0000;
+    color: #fff;
+}
+        /* Hero image */
+        .hero-img img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 20px;
+            box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Features */
+        .features {
+            padding: 70px 0;
+            background: #f9fafb;
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 900;
+            margin-bottom: 15px;
+        }
+
+        .features p.subtitle {
+            text-align: center;
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 50px;
+        }
+
+        .feature-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 18px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.06);
+            transition: 0.3s;
+            height: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .feature-card h4 {
+            font-weight: 800;
+            margin-top: 15px;
+        }
+
+        .feature-icon {
+            width: 55px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 14px;
+            background: #ffe5e5;
+            color: #ff0000;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* CTA */
+        .cta-section {
+            padding: 70px 20px;
+            text-align: center;
+            background: linear-gradient(90deg, #ff0000, #ff4d4d);
+            color: #fff;
+        }
+
+        .cta-section h2 {
+            font-size: 38px;
+            font-weight: 900;
+        }
+
+        .cta-section p {
+		color:#FFFFFF;
+            margin-top: 15px;
+            font-size: 17px;
+            opacity: 0.95;
+        }
+
+        .cta-section a {
+            margin-top: 25px;
+            display: inline-block;
+            padding: 13px 24px;
+            border-radius: 12px;
+            background: #fff;
+            color: #ff0000;
+            font-weight: 900;
+            text-decoration: none;
+        }
+
+        .cta-section a:hover {
+            background: #111;
+            color: #fff;
+        }
+
+        /* Footer */
+        .custom-footer {
+            background: #0f172a;
+            color: #fff;
+            padding: 35px 0;
+            text-align: center;
+        }
+
+        .custom-footer p {
+            margin: 0;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header class="custom-navbar">
+        <div class="container d-flex align-items-center justify-content-between">
+            <a href="index.html" class="nav-brand">
+                TNSchemes<span style="color:#FF0000;">Bot</span>
+            </a>
+
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="login_user.html">User</a>
+                <a href="login.html" class="nav-btn">Admin</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero-new">
+        <div class="container">
+            <div class="row align-items-center">
+
+                <div class="col-md-6">
+                    <h1>Find Tamil Nadu Government Schemes Easily</h1>
+					<h4>Intelligent Multilingual Based AI Chatbot for CitizenFriendly Access to Government Welfare Programs</h4>
+                    <p>
+                        TNSchemesBot helps you explore schemes, eligibility, documents required, and application steps
+                        in a simple and fast way.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <a href="login_user.html" class="btn-main">Get Started</a>
+                        <a href="#features" class="btn-outline">Explore Features</a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 hero-img text-center mt-4 mt-md-0">
+                    <img src="../static/img/schh2.jpg" alt="Schemes Image">
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2>Why Use TNSchemesBot?</h2>
+            <p class="subtitle">Smart assistance for Tamil Nadu people to access schemes easily.</p>
+
+            <div class="row">
+
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">1</div>
+                        <h4>Fast Search</h4>
+                        <p>Search schemes instantly by category, name, or eligibility.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">2</div>
+                        <h4>Eligibility Check</h4>
+                        <p>Check if you are eligible for schemes using simple questions.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">3</div>
+                        <h4>Application Guidance</h4>
+                        <p>Get documents list and step-by-step guidance to apply.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <h2>Start Using TNSchemesBot Today</h2>
+        <p>Login as User to find schemes or Admin to manage schemes.</p>
+        <a href="login_user.html">Login as User</a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="custom-footer">
+        <p>TNSchemesBot | All Rights Reserved</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../static/js/jquery/jquery-2.2.4.min.js"></script>
+    <script src="../static/js/bootstrap/popper.min.js"></script>
+    <script src="../static/js/bootstrap/bootstrap.min.js"></script>
+
+    <script src="static/api.js"></script>
+</body>
+
+</html>
