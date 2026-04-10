@@ -76,7 +76,7 @@ $(function() {
 	//var minput = $('#msg_input').val('');
 	
 	$.ajax({
-            url: 'http://localhost:5000/bot',
+            url: 'http://localhost:3000/bot',
             data: $('form').serialize(),
             type: 'POST',
             xhrFields: {

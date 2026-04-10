@@ -237,7 +237,7 @@
                         '<span style="color:#555">Registering...</span>';
                       document.getElementById("regBtn").disabled = true;
                       var formData = new FormData(this);
-                      fetch("http://localhost:5000/register", {
+                      fetch("http://localhost:3000/register", {
                         method: "POST",
                         body: formData,
                         credentials: "include",

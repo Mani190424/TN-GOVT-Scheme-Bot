@@ -23,7 +23,7 @@ mkdir -p "$BACKEND/static/upload"
 [ -f "$BACKEND/static/scheme.txt" ] || echo "0" > "$BACKEND/static/scheme.txt"
 
 echo ""
-echo "✅ All checks passed. Starting Flask backend on http://localhost:5000 ..."
+echo "✅ All checks passed. Starting Flask backend on http://localhost:3000 ..."
 echo "   (Press Ctrl+C to stop)"
 echo ""
 
